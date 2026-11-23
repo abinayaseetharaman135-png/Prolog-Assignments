@@ -1,0 +1,41 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Forward Chaining in Prolog
+
+% Initial facts
+fact(rain).
+fact(cloudy).
+
+% Rules
+rule(wet_ground) :-
+    fact(rain).
+
+rule(carry_umbrella) :-
+    fact(rain).
+
+rule(wet_ground) :-
+    fact(sprinkler_on).
+
+rule(slippery_road) :-
+    fact(wet_ground).
+
+rule(stay_indoors) :-
+    fact(rain),
+    fact(cloudy).
+
+% Forward chaining process
+forward :-
+    rule(NewFact),
+    \+ fact(NewFact),
+    assertz(fact(NewFact)),
+    write('New Fact: '),
+    write(NewFact),
+    nl,
+    forward.
+
+forward :-
+    write('Forward Chaining Completed.'), nl.
+</div>
+
+</div>

@@ -1,0 +1,34 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Bird Flying Database
+
+bird(sparrow).
+bird(parrot).
+bird(pigeon).
+bird(ostrich).
+bird(penguin).
+bird(eagle).
+
+can_fly(sparrow).
+can_fly(parrot).
+can_fly(pigeon).
+can_fly(eagle).
+
+cannot_fly(ostrich).
+cannot_fly(penguin).
+
+% Rule to check whether a bird can fly
+
+flies(Bird) :-
+    bird(Bird),
+    can_fly(Bird).
+
+% Rule to check whether a bird cannot fly
+
+does_not_fly(Bird) :-
+    bird(Bird),
+    cannot_fly(Bird).
+</div>
+
+</div>

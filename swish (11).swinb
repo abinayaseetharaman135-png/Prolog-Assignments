@@ -1,0 +1,38 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Medical Diagnosis System
+
+% Disease and symptom database
+
+disease(flu).
+disease(cold).
+disease(malaria).
+disease(migraine).
+
+symptom(flu, fever).
+symptom(flu, cough).
+symptom(flu, headache).
+
+symptom(cold, sneezing).
+symptom(cold, runny_nose).
+symptom(cold, cough).
+
+symptom(malaria, fever).
+symptom(malaria, chills).
+symptom(malaria, sweating).
+
+symptom(migraine, headache).
+symptom(migraine, nausea).
+symptom(migraine, light_sensitivity).
+
+% Rule to identify disease
+
+diagnose(Disease, S1, S2) :-
+    disease(Disease),
+    symptom(Disease, S1),
+    symptom(Disease, S2),
+    S1 \= S2.
+</div>
+
+</div>

@@ -1,0 +1,63 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Best First Search Algorithm
+
+% Graph connections
+edge(a, b).
+edge(a, c).
+edge(b, d).
+edge(b, e).
+edge(c, f).
+edge(c, g).
+edge(d, h).
+edge(e, h).
+edge(f, h).
+edge(g, h).
+
+% Heuristic values
+heuristic(a, 8).
+heuristic(b, 6).
+heuristic(c, 4).
+heuristic(d, 5).
+heuristic(e, 3).
+heuristic(f, 2).
+heuristic(g, 1).
+heuristic(h, 0).
+
+% Find the node with minimum heuristic value
+best_node([Node|Rest], Best) :-
+    best_node(Rest, Node, Best).
+
+best_node([], Best, Best).
+
+best_node([Node|Rest], Current, Best) :-
+    heuristic(Node, H1),
+    heuristic(Current, H2),
+    (H1 &lt; H2 -&gt;
+        Next = Node
+    ;
+        Next = Current
+    ),
+    best_node(Rest, Next, Best).
+
+% Best First Search
+best_first(Start, Goal, Path) :-
+    search([Start], Goal, [], ReversePath),
+    reverse(ReversePath, Path).
+
+search([Goal|_], Goal, Visited, [Goal|Visited]).
+
+search(Open, Goal, Visited, Path) :-
+    best_node(Open, Best),
+    select(Best, Open, Remaining),
+    findall(X,
+        (edge(Best, X),
+         \+ member(X, Visited),
+         \+ member(X, Remaining)),
+        Children),
+    append(Remaining, Children, NewOpen),
+    search(NewOpen, Goal, [Best|Visited], Path).
+</div>
+
+</div>

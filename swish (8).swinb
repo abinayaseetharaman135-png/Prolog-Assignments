@@ -1,0 +1,46 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Monkey Banana Problem
+
+% Initial state:
+% monkey position, monkey status, box position, banana status
+
+initial_state(state(door, floor, window, no)).
+
+% Actions
+
+move(state(door, floor, window, no),
+     state(middle, floor, window, no),
+     move_to_middle).
+
+move(state(middle, floor, window, no),
+     state(banana, floor, banana, no),
+     push_box).
+
+move(state(banana, floor, banana, no),
+     state(banana, on_box, banana, no),
+     climb_box).
+
+move(state(banana, on_box, banana, no),
+     state(banana, on_box, banana, yes),
+     grasp_banana).
+
+% Solution
+
+solve :-
+    initial_state(S1),
+    move(S1, S2, A1),
+    move(S2, S3, A2),
+    move(S3, S4, A3),
+    move(S4, S5, A4),
+    write('Solution:'), nl,
+    write(A1), nl,
+    write(A2), nl,
+    write(A3), nl,
+    write(A4), nl,
+    S5 = state(banana, on_box, banana, yes),
+    write('Monkey gets the banana!').
+</div>
+
+</div>

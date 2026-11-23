@@ -1,0 +1,22 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Student-Teacher-Subject Code Database
+
+student('Abinaya', 'CS101').
+student('Ravi', 'CS102').
+student('Priya', 'CS103').
+student('Kumar', 'CS104').
+
+teacher('Dr.Sivanantham', 'CS101').
+teacher('Dr.Geetha', 'CS102').
+teacher('Dr.Pradeep', 'CS103').
+teacher('Dr.Rini', 'CS104').
+
+subject('CS101', 'Artificial Intelligence').
+subject('CS102', 'Database Management System').
+subject('CS103', 'Engineering Mathematics').
+subject('CS104', 'Computer Programming').
+</div>
+
+</div>

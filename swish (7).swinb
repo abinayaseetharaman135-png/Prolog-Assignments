@@ -1,0 +1,26 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Diet Suggestion System Based on Disease
+
+% Diet recommendations
+
+diet(diabetes, 'Low sugar foods, vegetables and whole grains').
+diet(hypertension, 'Low salt foods, fruits and vegetables').
+diet(obesity, 'Low calorie foods, salads and fruits').
+diet(anemia, 'Iron rich foods, spinach and dates').
+diet(heart_disease, 'Low fat foods, oats and green vegetables').
+diet(acidity, 'Bananas, oats and non-spicy foods').
+
+% Rule to suggest diet based on disease
+
+suggest_diet(Disease, Diet) :-
+    diet(Disease, Diet).
+
+% Rule to check whether disease is available
+
+disease(Disease) :-
+    diet(Disease, _).
+</div>
+
+</div>

@@ -1,0 +1,36 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Backward Chaining Program
+
+% Initial Facts
+parent(john, mary).
+parent(mary, alice).
+parent(john, peter).
+parent(peter, david).
+
+male(john).
+male(peter).
+male(david).
+
+female(mary).
+female(alice).
+
+% Rules
+grandparent(X, Y) :-
+    parent(X, Z),
+    parent(Z, Y).
+
+ancestor(X, Y) :-
+    parent(X, Y).
+
+ancestor(X, Y) :-
+    parent(X, Z),
+    ancestor(Z, Y).
+
+% Backward Chaining
+prove(Goal) :-
+    call(Goal).
+</div>
+
+</div>

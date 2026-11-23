@@ -1,0 +1,29 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Fruit and Colour Database
+
+fruit(apple).
+fruit(banana).
+fruit(orange).
+fruit(grapes).
+fruit(mango).
+fruit(watermelon).
+
+% Colours of fruits
+
+color(apple, red).
+color(banana, yellow).
+color(orange, orange).
+color(grapes, green).
+color(mango, yellow).
+color(watermelon, green).
+
+% Rule to find fruit colour
+
+fruit_color(Fruit, Color) :-
+    fruit(Fruit),
+    color(Fruit, Color).
+</div>
+
+</div>

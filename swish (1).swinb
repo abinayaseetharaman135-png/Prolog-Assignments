@@ -1,0 +1,13 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Database with Name and DOB
+
+person('Abinaya', '2006-05-15').
+person('Ravi', '2005-08-20').
+person('Priya', '2006-03-10').
+person('Kumar', '2004-12-25').
+person('Arun', '2005-06-18').
+</div>
+
+</div>

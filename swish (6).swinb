@@ -1,0 +1,55 @@
+<div class="notebook">
+
+<div class="nb-cell program" name="p1">
+% Family Tree Database
+
+% Male members
+male(ravi).
+male(kumar).
+male(arun).
+male(rajesh).
+
+% Female members
+female(lakshmi).
+female(priya).
+female(geetha).
+female(anitha).
+
+% Parent relationships
+parent(ravi, arun).
+parent(lakshmi, arun).
+
+parent(ravi, priya).
+parent(lakshmi, priya).
+
+parent(arun, rajesh).
+parent(geetha, rajesh).
+
+% Rules
+
+father(X, Y) :-
+    parent(X, Y),
+    male(X).
+
+mother(X, Y) :-
+    parent(X, Y),
+    female(X).
+
+child(X, Y) :-
+    parent(Y, X).
+
+son(X, Y) :-
+    child(X, Y),
+    male(X).
+
+daughter(X, Y) :-
+    child(X, Y),
+    female(X).
+
+sibling(X, Y) :-
+    parent(Z, X),
+    parent(Z, Y),
+    X \= Y.
+</div>
+
+</div>
